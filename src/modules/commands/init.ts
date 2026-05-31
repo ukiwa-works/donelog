@@ -11,10 +11,10 @@ export type Config = typeof defaultConfig;
 export const initCommand = new Command('init')
   .description('Initialize my-npx-config.json')
   .action(() => {
-    const filePath = path.resolve(process.cwd(), 'my-npx-config.json');
+    const filePath = path.resolve(process.cwd(), 'donelog-config.json');
 
     if (fs.existsSync(filePath)) {
-      console.error('my-npx-config.json already exists.');
+      console.error('donelog-config.json already exists.');
       process.exit(1);
     }
 

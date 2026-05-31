@@ -4,7 +4,7 @@ import path from 'path';
 import { Config } from './init';
 
 export const helloCommand = new Command('hello').description('Say hello to someone.').action(() => {
-  const filePath = path.resolve(process.cwd(), 'my-npx-config.json');
+  const filePath = path.resolve(process.cwd(), 'donelog-config.json');
 
   if (!fs.existsSync(filePath)) {
     console.error(`Configuration file not found at ${filePath}`);
