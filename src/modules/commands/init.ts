@@ -1,9 +1,10 @@
 import { Command } from 'commander';
 import fs from 'fs';
 import path from 'path';
+import readline from 'readline';
 
 const defaultConfig = {
-  name: 'hoge',
+  username: '',
 };
 
 export type Config = typeof defaultConfig;
@@ -18,6 +19,19 @@ export const initCommand = new Command('init')
       process.exit(1);
     }
 
-    fs.writeFileSync(filePath, JSON.stringify(defaultConfig, null, 2), 'utf-8');
-    console.log('donelog-config.json has been created successfully.');
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+
+    rl.question('GitHub Username: ', (username) => {
+      rl.close();
+
+      if (!username.trim()) {
+        console.error('Error: GitHub Username is required.');
+        process.exit(1);
+      }
+
+      const config: Config = { username: username.trim() };
+      fs.writeFileSync(filePath, JSON.stringify(config, null, 2), 'utf-8');
+      console.log(`Welcome, ${config.username} !`);
+      console.log('donelog-config.json has been created successfully.');
+    });
   });

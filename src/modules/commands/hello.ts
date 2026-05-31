@@ -12,5 +12,5 @@ export const helloCommand = new Command('hello').description('Say hello to someo
   }
 
   const config: Config = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-  console.log(`Hello, ${config.name}!`);
+  console.log(`Hello, ${config.username}!`);
 });
