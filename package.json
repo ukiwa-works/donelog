@@ -1,0 +1,33 @@
+{
+  "name": "donelog",
+  "version": "0.1.0",
+  "description": "Gather all the things you did yesterday.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "init": "npm run build && npm run start init",
+    "hello": "npm run build && npm run start hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukiwa-works/donelog.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ukiwa-works/donelog/issues"
+  },
+  "homepage": "https://github.com/ukiwa-works/donelog#readme",
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "commander": "^15.0.0"
+  },
+  "bin": {
+    "donelog": "dist/index.js"
+  }
+}
