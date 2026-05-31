@@ -9,7 +9,7 @@ const defaultConfig = {
 export type Config = typeof defaultConfig;
 
 export const initCommand = new Command('init')
-  .description('Initialize my-npx-config.json')
+  .description('Initialize donelog-config.json')
   .action(() => {
     const filePath = path.resolve(process.cwd(), 'donelog-config.json');
 
@@ -19,5 +19,5 @@ export const initCommand = new Command('init')
     }
 
     fs.writeFileSync(filePath, JSON.stringify(defaultConfig, null, 2), 'utf-8');
-    console.log('my-npx-config.json has been created successfully.');
+    console.log('donelog-config.json has been created successfully.');
   });
